@@ -11,7 +11,7 @@ def draw_trajectory(x1, x2, x_min, x_max, func, ax):
     x_meshgrid = np.meshgrid(*zip(*x_steps))
     # import pdb; pdb.set_trace()
     y_meshgrid = func(x_meshgrid)
-    CS = ax.contour(x_meshgrid[0], x_meshgrid[1], y_meshgrid, 10)
+    CS = ax.contour(x_meshgrid[0], x_meshgrid[1], y_meshgrid, 8, extend='both')
     ax.clabel(CS, inline=1, fontsize=10)
 
     # trajectory
