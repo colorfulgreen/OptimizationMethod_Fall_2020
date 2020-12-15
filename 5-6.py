@@ -12,7 +12,7 @@ def gradient(x):
 def hessian(x):
     return np.array([[10, -9], [-9, 10]])
 
-def steepestDescent(x, OPTIM=-22):
+def steepest_descent(x, OPTIM=-22):
     states = []
 
     y = y_prev = func(x)
@@ -39,11 +39,11 @@ def steepestDescent(x, OPTIM=-22):
 if __name__ == '__main__':
     x_min = [-1, -1]
     x_max = [12, 7]
-    fig, ax = plt.subplots(4,2)
+    fig, ax = plt.subplots(4,2,figsize=(16,8))
     ax[0][0].set_title('Trajectory')
     ax[0][1].set_title('Convergence Factors')
     for i, x in enumerate([[0,0], [-0.4, 0], [10, 0], [11, 0]]):
-        states = steepestDescent(x)
+        states = steepest_descent(x)
         draw_trajectory(*zip(*[i['x'] for i in states]), x_min, x_max, func, ax[i][0])
         draw_conv_factors([i['conv_factor'] for i in states][1:], ax[i][1])
     plt.show()

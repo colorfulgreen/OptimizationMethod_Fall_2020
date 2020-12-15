@@ -2,16 +2,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def draw_trajectory(x1, x2, x_min, x_max, func, ax):
+def draw_trajectory(x1, x2, x_min, x_max, func, ax, levels=10):
     ax.set_xlabel('x1')
     ax.set_ylabel('x2')
 
     # contour
-    x_steps = np.linspace(x_min, x_max, num=100)
+    x_steps = np.linspace(x_min, x_max, num=1000)
     x_meshgrid = np.meshgrid(*zip(*x_steps))
     # import pdb; pdb.set_trace()
     y_meshgrid = func(x_meshgrid)
-    CS = ax.contour(x_meshgrid[0], x_meshgrid[1], y_meshgrid, 8, extend='both')
+    CS = ax.contour(x_meshgrid[0], x_meshgrid[1], y_meshgrid, levels, extend='both')
     ax.clabel(CS, inline=1, fontsize=10)
 
     # trajectory

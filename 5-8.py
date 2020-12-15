@@ -62,7 +62,7 @@ if __name__ == '__main__':
     x_max = (80, 100)
     alphas = {}
 
-    fig, ax = plt.subplots(2, 4)
+    fig, ax = plt.subplots(2, 4, figsize=(16,8))
 
     for idx_mu, mu in enumerate((0.1, 1)):
         for idx, x in enumerate([(8, 90), (1, 40), (15, 68.69), (10, 20)]):
