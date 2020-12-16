@@ -11,7 +11,7 @@ def conjugate_gradient(x, G, b):
     states = []
     g = np.dot(G,x) - b
     p = -g
-    while np.linalg.norm(g) > 1e-6:
+    while np.linalg.norm(g) > 1e-5:
         #import pdb; pdb.set_trace()
         d = np.dot(G, p)
         alpha = np.dot(g, g) / np.dot(p, d)

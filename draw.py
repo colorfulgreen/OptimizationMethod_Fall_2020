@@ -28,7 +28,6 @@ def draw_trajectory_unary(x, y, ax, fmt='g-*'):
 
 
 def draw_conv_factors(factors, ax):
-    # import pdb; pdb.set_trace()
     ax.set_xlabel('iteration')
     ax.plot(range(len(factors)),
             factors,
